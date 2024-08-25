@@ -1,0 +1,57 @@
+# Maven target folder and other Maven specific files
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+
+# Maven Wrapper files
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Eclipse IDE specific files
+.project
+.classpath
+.settings/
+
+# IntelliJ IDEA specific files
+.idea/
+*.iml
+
+# Logs and temporary files
+logs/
+*.log
+*.out
+*.tmp
+*.temp
+
+# Spring Boot output files
+*.jar
+*.war
+*.ear
+
+# Node modules and Angular build files
+node_modules/
+dist/
+out-tsc/
+npm-debug.log
+yarn-error.log
+
+# Angular environment files
+src/environments/environment*.ts
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Visual Studio Code directory and files
+.vscode/
+
+# Miscellaneous IDE and editor-specific files
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
