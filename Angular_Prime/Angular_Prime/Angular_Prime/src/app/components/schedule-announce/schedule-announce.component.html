@@ -1,0 +1,79 @@
+<div class="container">
+    <div *ngIf="alert">
+        <app-alert [type]="alert.type" [title]="alert.title" [message]="alert.message"></app-alert>
+      </div>
+    <h2 class="mb-4 text-center">Create Announcement</h2>
+    <form>
+        <!-- Existing Form Fields -->
+        <div class="mb-3">
+         
+            <label for="companySelect" class="form-label">Select Companies</label>
+            <select class="form-select" id="companySelect" name="companies[]" multiple (change)="onCompanySelectChange($event)">
+                <option value="company1">Company 1</option>
+                <option value="company2">Company 2</option>
+                <option value="company3">Company 3</option>
+                <option value="company4">Company 4</option>
+                <option value="company5">Company 5</option>
+            </select>
+            <input type="text" class="form-control" id="selectedCompanies" [value]="selectedCompaniesDisplay" readonly>
+        </div>  
+        <div class="mb-3">
+            <label for="departmentSelect" class="form-label">Select Department or Announce All</label>
+            <select class="form-select" id="departmentSelect" name="departments[]" multiple (change)="onDepartmentSelectChange($event)">
+                <option value="all">Announce to All</option>
+                <option value="department1">Department 1</option>
+                <option value="department2">Department 2</option>
+                <option value="department3">Department 3</option>
+            </select>
+            <input type="text" class="form-control" id="selectedDepartments" [value]="selectedDepartmentsDisplay" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="announcementTitle" class="form-label">Announcement Title</label>
+            <input type="text" class="form-control" id="announcementTitle" placeholder="Enter announcement title" required>
+        </div>
+        <div class="form-group">
+            <label for="scheduleDateTime" class="form-label">Schedule Date & Time</label>
+            <input type="datetime-local" class="form-control" id="scheduleDateTime">
+        </div>        
+        <div class="mb-3">
+            <label for="positionSelect" class="form-label">Select Position or Announce to All Positions</label>
+            <select class="form-select" id="positionSelect" required (change)="onPositionSelectChange($event)">
+                <option value="" disabled selected>Select a position or announce to all</option>
+                <option value="all">Announce to All Positions</option>
+                <option value="position1">Position 1</option>
+                <option value="position2">Position 2</option>
+                <option value="position3">Position 3</option>
+                <option value="one-by-one">Choose One by One</option>
+            </select>
+        </div>
+        <!-- New Group Creation Section -->
+       
+        <!-- User Selection Section -->
+        <div *ngIf="showUserSelection">
+            <div class="mb-3">
+                <label for="userSelect" class="form-label">Select Users</label>
+                <select class="form-select" id="userSelect" name="users[]" multiple (change)="onUserSelectChange($event)">
+                    <option value="user1">User 1</option>
+                    <option value="user2">User 2</option>
+                    <option value="user3">User 3</option>
+                    <option value="user4">User 4</option>
+                    <option value="user5">User 5</option>
+                </select>
+                <input type="text" class="form-control mt-2" id="selectedUsers" [value]="selectedUsersDisplay" readonly>
+            </div>
+        </div>
+        <div class="mb-4">
+            <label class="form-label">Attach Document</label>
+            <div class="file-input" id="fileInputContainer">
+                <input type="file" id="fileInput" #fileInput accept="image/*, .pdf, .zip">
+                <span>Drag and drop a file here or click</span>
+            </div>
+            <small class="text-muted">Accepted formats: PDF, ZIP, Images, etc.</small>
+            <div class="file-preview" id="filePreview" #filePreview></div>
+        </div>
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Create Announcement</button>
+
+
+    </form>
+</div>

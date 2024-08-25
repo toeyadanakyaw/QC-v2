@@ -1,0 +1,58 @@
+<div class="dashboard-container">  
+  <div class="dashboard-summary">
+    <div class="summary-card">
+      <h4>Anno Summary</h4>
+      <!-- Content for Anno Summary -->
+    </div>
+    <div class="summary-card">
+      <h4>Staff Summary</h4>
+      <!-- Content for Staff Summary -->
+    </div>
+    <!-- <div *ngIf="alert">
+      <app-alert [type]="alert.type" [title]="alert.title" [message]="alert.message"></app-alert>
+    </div> -->
+    <div class="summary-card">
+     <a href="#" routerLink="/upcoming-announce"><h4>Upcoming Anno</h4></a> 
+      <!-- Content for Upcoming Anno -->
+    </div>
+    <div class="summary-card">
+      <h4>Req Anno</h4>
+      <!-- Content for Req Anno -->
+    </div>
+  </div>
+  <!-- <button type="submit" (click)="fails()">fails</button> -->
+
+  <div class="current-anno">
+    <h3>Current Anno Noted Staff</h3>
+    <p-table #dt [value]="annoData" [paginator]="true" [rows]="10" [globalFilterFields]="['title', 'announcerName']">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="title">Title <p-sortIcon field="title"></p-sortIcon></th>
+          <th pSortableColumn="announcerName">Announcer Name <p-sortIcon field="announcerName"></p-sortIcon></th>
+          <th pSortableColumn="duration">Duration <p-sortIcon field="duration"></p-sortIcon></th>
+          <th>Progress</th>
+        </tr>
+        <tr>
+          <th>
+            <input pInputText type="text" (input)="onFilter($event, 'title')" placeholder="Search by Title" />
+          </th>
+          <th>
+            <input pInputText type="text" (input)="onFilter($event, 'announcerName')" placeholder="Search by Announcer" />
+          </th>
+          <th></th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData>
+        <tr>
+          <td>{{ rowData.title }}</td>
+          <td>{{ rowData.announcerName }}</td>
+          <td>{{ rowData.duration }}</td>
+          <td>
+            <p-progressBar [value]="rowData.progress"></p-progressBar>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

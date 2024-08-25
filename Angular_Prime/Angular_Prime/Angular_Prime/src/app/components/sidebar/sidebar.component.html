@@ -1,0 +1,126 @@
+<!-- sidebar.component.html -->
+<div class="wrapper d-flex">
+  <!-- Sidebar -->
+  <nav id="sidebar" class="bg-dark text-white p-3">
+    <div class="sidebar-header">
+      <h3>Asknowledge Hub</h3>
+    </div>
+    <ul class="list-unstyled components">
+      <li class="active">
+        <a href="#dashboard" class="nav-link text-white" routerLink="/dashboard">
+          <i class="bx bx-tachometer"></i>
+          <span class="text" style="padding-right: 120px;">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white d-flex justify-content-between align-items-center"
+           data-bs-toggle="collapse" href="#announceMenu" role="button" aria-expanded="false"
+           aria-controls="announceMenu">
+          <div class="text"><i class="bx bx-envelope"></i> Announce</div>
+          <i class="bx bx-chevron-down"></i>
+        </a>
+        <div class="collapse" id="announceMenu">
+          <ul class="list-unstyled ps-3">
+            <li class="text"><a class="dropdown-item text-white" href="#" routerLink="/create-announce">Create Announce</a></li>
+            <li  class="text"><a class="dropdown-item text-white" href="#" routerLink="/schdule-announce">Schedule Announce</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white d-flex justify-content-between align-items-center"
+           data-bs-toggle="collapse" href="#listMenu" role="button" aria-expanded="false"
+           aria-controls="listMenu">
+          <div class="text"><i class="bx bx-list-ul"></i> List</div>
+          <i class="bx bx-chevron-down"></i>
+        </a>
+        <div class="collapse" id="listMenu">
+          <ul class="list-unstyled ps-3">
+            <li class="text"><a class="dropdown-item text-white" href="#" routerLink="/staff-list">Staff List</a></li>
+            <li class="text"><a class="dropdown-item text-white" href="#" routerLink="/announce-history">Announce History</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white d-flex justify-content-between align-items-center"
+           data-bs-toggle="collapse" href="#reportMenu" role="button" aria-expanded="false"
+           aria-controls="reportMenu">
+          <div  class="text"><i class="bx bx-line-chart"></i> Report</div>
+          <i class="bx bx-chevron-down"></i>
+        </a>
+        <div class="collapse" id="reportMenu">
+          <ul class="list-unstyled ps-3">
+            <li class="text"><a class="dropdown-item text-white" href="#" routerLink="/asknowledge">Acknowledge</a></li>
+            <li class="text"><a class="dropdown-item text-white" href="#">Details</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-white" routerLink="/otp">
+          <i class="bx bx-key"></i>
+          <span class="text" style="padding-right: 120px;">OTP</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-white" routerLink="/create-group">
+          <i class="bx bx-chat"></i>
+          <span class="text" style="padding-right: 120px;">create-group</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-white" routerLink="/chat">
+          <i class="bx bx-chat"></i>
+          <span class="text" style="padding-right: 120px;">Chat</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <div id="content" class="flex-grow-1">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <!-- Sidebar Toggle Button -->
+        <button id="sidebarToggle" class="btn btn-primary">
+          <i class="bx bx-menu"></i>
+        </button>
+    
+        <!-- Navbar Brand -->
+        <a class="navbar-brand ms-3" href="#">HR System</a>
+    
+        <!-- Navbar Toggler for Small Screens -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Navbar Items -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/login">Logout</a>
+            </li>
+          </ul>
+    
+          <!-- Notification Icons and Profile -->
+          <div class="navbar-icons d-flex align-items-center ms-3">
+            <!-- Notification Dropdown -->
+           <app-notifications></app-notifications>
+            <!-- Additional Icons -->
+            <a href="#" class="nav-link"><i class="bx bx-envelope"></i></a>
+            <a href="#" class="nav-link"><i class="bx bx-cog"></i></a>
+            <div class="user-profile ms-3">
+             <a href="#" routerLink="/profile"><img src="https://via.placeholder.com/40" alt="User" class="rounded-circle"></a> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+
+    <!-- Main Content -->
+    <div class="main-content p-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="nav-item dropdown" style="margin-right: 20px;">
+    <a class="nav-link position-relative" href="#" id="notificationDropdown" role="button"
+       data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bx bx-bell"></i>
+      <span class="badge bg-danger position-absolute top-0 start-100 translate-middle badge-pill">
+        {{ unreadCount }} <!-- Dynamic notification count -->
+      </span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+      <li class="dropdown-header">Notifications</li>
+      <li *ngFor="let notification of notifications">
+        <a class="dropdown-item" href="#">{{ notification.message }}</a>
+      </li>
+      <li>
+        <hr class="dropdown-divider">
+      </li>
+      <li><a class="dropdown-item text-center" href="#" routerLink="/dashboard" (click)="markAllAsRead()">Mark all as read</a></li>
+    </ul>
+  </div>
+  

@@ -1,0 +1,102 @@
+*{
+  box-sizing:border-box;
+}
+.body {
+  background-color: #f0f0f0; /* Light grey background for the chat area */
+  padding: 20px;
+  height: 100vh; /* Full height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  background-color: #ffffff; /* White background for the chat box */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  overflow-y: auto;
+  max-height: 80vh; /* Makes sure chat box doesn't grow too tall */
+}
+
+.message{
+  width:calc(100% - 100px);
+  border-radius:15px;
+  padding:1em;
+}
+.person-a .message{
+  background:#f8f8f8;
+}
+.person-a{
+  display:flex;
+  align-items:flex-end;
+}
+.icon{
+  --size:40px;
+  width:var(--size);
+  height:var(--size);
+background:url(https://i.ibb.co/vB9B6G8/mWDLI93.gif);
+  background-position:center;
+  background-size:cover;
+  border-radius:100%;
+  margin-right:.8em;
+  position:relative;
+}
+.icon::after{
+  content:' ';
+  position:absolute;
+  width:10px;
+  height:10px;
+  background:lightgreen;
+  border-radius:100%;
+  bottom:0;
+  right:0;
+}
+.person-b .message{
+  background:lightblue;
+  margin:2em 0;
+  margin-left:100px;
+  color:white;
+  text-align:right;
+}
+.message svg{
+  height:26px;
+  vertical-align:middle;
+}
+.last{
+  width:auto;
+}
+/* Style the input container */
+.input-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+/* Style the message input */
+.message-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+/* Style the send button */
+.send-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: #0056b3;
+}
